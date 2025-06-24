@@ -3,9 +3,9 @@ import ReviewCard from './ReviewCard';
 
 const reviews = [
   {
-    content: 'Exceptional web development! Delivered a seamless, responsive site with clean code and great UX.',
+    content: 'Exceptional web development! Delivered a seamless, responsive site with clean code. "In another univers we will be teammate Again"',
     name: 'Bayzid Bokhary',
-    imgSrc: 'images/bayzid.jpg',
+    imgSrc: 'images/bayzid-2.jpg',
     company: ''
   },
   {
