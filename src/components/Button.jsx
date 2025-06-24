@@ -5,7 +5,7 @@ const ButtonPrimary = ({
     target='',
     label,
     icon,
-    classes
+    classes = ''
 }) => {
 
 
@@ -33,7 +33,7 @@ const ButtonPrimary = ({
 
 
 
-ButtonPrimary.PropTypes= {
+ButtonPrimary.propTypes= {
     label:PropTypes.string.isRequired,
     href:PropTypes.string,
     target: PropTypes.string,
@@ -47,7 +47,7 @@ const ButtonOutline = ({
     target='',
     label,
     icon,
-    classes
+    classes = ''
 }) => {
 
 
