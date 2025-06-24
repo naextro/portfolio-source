@@ -36,8 +36,15 @@ const ReviewCard = ({
             </p>
 
             <div className="flex items-center gap-2 mt-auto">
-                <figure className=" img-box rounded-lg">
-                    <img src={imgSrc} alt={name} width={44} height={44} loading='lazy' className="img-cover" />
+                <figure className="w-44 h-44 rounded-lg overflow-hidden shrink-0">
+                    <img
+                        src={imgSrc}
+                        alt={name}
+                        width={44}
+                        height={44}
+                        loading="lazy"
+                        className="object-cover w-full h-full"
+                    />
                 </figure>
 
                 <div>
