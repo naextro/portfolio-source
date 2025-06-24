@@ -5,7 +5,7 @@ import Skill from "./components/Skill";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-//import Review from "./components/Review";
+import Review from "./components/Review";
 import { ReactLenis } from "lenis/react";
 
 
@@ -18,6 +18,7 @@ const App = () => {
         <About />
         <Skill />
         <Work />
+        <Review/>
         <Contact />
       </main>
       <Footer />
