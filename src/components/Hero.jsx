@@ -25,7 +25,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className=' hidden lg:block'>
-                <figure className='w-full max-w-[480px] ml-auto bg-gradient-to-t from-white via-25% via-slate-500 to-65% rounded-[60px] overflow-hidden'>
+                <figure className='-z-10 w-full max-w-[480px] ml-auto bg-gradient-to-t from-white via-25% via-slate-500 to-65% rounded-[60px] overflow-hidden'>
                     <img src="images/hero.jpg" alt="Ibne Arif Al Riham" height={800} width={656} className='w-full scale-[2]' />
                 </figure>
                 
