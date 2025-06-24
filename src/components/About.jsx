@@ -19,9 +19,11 @@ const About = () => {
         <section id='about' className='section'>
             <div className='container'>
                 <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12'>
-                    <p className='text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]'>Hi, I’m Ibne Reham — a passionate web developer focused on delivering seamless and scalable digital experiences. I combine modern web technologies with clean design to build performant, accessible, and user-friendly websites & apps.
+                    <p className='text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]'>Hi, I’m Ibne Reham
 
-                        Whether you're building from scratch or scaling an existing product, I can help bring your vision to life.
+I’m a full-stack developer and video editor. I build clean and responsive websites and web apps using tools like React, Tailwind, and Node.js. I also edit videos to tell clear and engaging stories through smooth cuts and visuals.
+
+I enjoy solving problems with code and creating content that looks good and works well. Whether it's a product, a website, or a video, I focus on making it simple, effective, and user-friendly.
 
                     </p>
                     <div className='flex flex-wrap items-center gap-4 md:gap-7'>
