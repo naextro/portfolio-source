@@ -12,7 +12,7 @@ const works = [
     projectLink: 'https://github.com/naextro/NXT-PLAYER/'
   },
   {
-    imgSrc: 'images/aureoles_0.png',
+    imgSrc: 'images/aureoles_0.jpg',
     title: 'Aureoles Discord Bot',
     tags: ['Development', 'API'],
     projectLink: 'https://github.com/naextro/AureolesBot'
