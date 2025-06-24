@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        "sans": ["Funnel", "sans-serif"]
+        "sans": ["Funnel Display", "sans-serif"]
       }
     },
   },
