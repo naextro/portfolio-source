@@ -60,7 +60,7 @@ const Navbar = ({ navOpen }) => {
 
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 navbar ${navOpen ? 'active' : ''}`}>
+    <nav className={`navbar ${navOpen ? 'active' : ''}`}>
         {
             navItems.map(({label,link,className,ref},key)=>(
                 <a href={link} className={className} key={key} ref={ref} onClick={activeCurrentLink}>{label}</a>
