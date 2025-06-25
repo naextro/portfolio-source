@@ -88,9 +88,9 @@ const Footer = () => {
             </div>
         </div>
     </div>
-    <div className="flex items-center justify-between pt-10 mb-8">
+    <div className="flex items-center justify-between pt-10 mb-8 px-4">
         <a href="" className="">
-            <img src="images/logo.svg" width={40} height={40} alt="logo" />
+            <img src="images/NAEXTRO.svg" width={30} height={30} alt="logo" />
         </a>
         <p className="text-zinc-500 text-sm">&copy; 2024 <span className='text-zinc-200'>Naextro</span></p>
     </div>
