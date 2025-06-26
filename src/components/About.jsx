@@ -40,7 +40,7 @@ const About = () => {
                             ))
                         }
                         <img
-                            src='images/logo.svg'
+                            src='images/NAEXTRO.svg'
                             alt='logo'
                             className='ml-auto md:w-[40px] md:h-[40px]'
                             width={30}
