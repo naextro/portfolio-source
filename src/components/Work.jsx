@@ -6,10 +6,10 @@ import ProjectCard from "./ProjectCard";
 const Work = () => {
 const works = [
   {
-    imgSrc: 'images/project-1.jpg',
+    imgSrc: 'images/anon.png',
     title: 'Full stack music app',
-    tags: ['API', 'MVC', 'Development'],
-    projectLink: 'https://github.com/naextro/NXT-PLAYER/'
+    tags: ['Commerce', 'Development'],
+    projectLink: 'https://aanon.vercel.app/'
   },
   {
     imgSrc: 'images/aureoles_0.jpg',
