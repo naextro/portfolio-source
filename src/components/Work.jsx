@@ -7,7 +7,7 @@ const Work = () => {
 const works = [
   {
     imgSrc: 'images/anon.png',
-    title: 'Full stack music app',
+    title: 'E-Commerce Landing Page',
     tags: ['Commerce', 'Development'],
     projectLink: 'https://aanon.vercel.app/'
   },
@@ -22,6 +22,12 @@ const works = [
     title: 'VLC Discord Rich Presence',
     tags: ['API', 'Development'],
     projectLink: 'https://github.com/naextro/VLC_RPC'
+  },
+  {
+    imgSrc: 'images/cryptknex.png',
+    title: 'Crypto wallet landing page',
+    tags: ['Commerce', 'Development'],
+    projectLink: 'https://cryptknex.vercel.app/'
   },
 
 ];
