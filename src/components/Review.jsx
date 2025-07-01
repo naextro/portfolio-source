@@ -1,18 +1,17 @@
 import React from 'react'
 import ReviewCard from './ReviewCard';
 
-const reviews = [
-  {
-    content: 'Exceptional web development! Delivered a seamless, responsive site with clean code. "In another univers we will be teammate Again"',
-    name: 'Bayzid Bokhary',
-    imgSrc: 'images/bayzid-2.jpg',
-    company: ''
-  },
-  {
+const reviews = [  {
     content: 'Impressive work! Fast loading times, intuitive design, and flawless backend integration. Won 3 prizes because of this.',
     name: 'Bayzid Bokhary  (কিরান)',
     imgSrc: 'images/bayzid.jpg',
-    company: ''
+    company: 'Entrepreneur'
+  },
+  {
+    content: 'Your work is good and saved my time',
+    name: 'KM Rubaid Ferdous Swapnil',
+    imgSrc: 'images/SwapnilBro.jpg',
+    company: 'RS22 Studios'
   }
 ];
 
