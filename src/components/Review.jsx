@@ -23,7 +23,7 @@ const Review = () => {
           What my clients say
         </h2>
 
-        <div className='flex items-stretch gap-3 w-fit'>
+        <div className="overflow-x-auto flex gap-3 w-full flex-nowrap -mx-4 p-4">
           {
             reviews.map(({content, name,imgSrc,company}, key)=>(
               <ReviewCard 
