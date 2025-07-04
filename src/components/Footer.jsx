@@ -92,7 +92,7 @@ const Footer = () => {
         <a href="" className="">
             <img src="images/NAEXTRO.svg" width={30} height={30} alt="logo" />
         </a>
-        <p className="text-zinc-500 text-sm">&copy; 2024 <span className='text-zinc-200'>Naextro</span></p>
+        <p className="text-zinc-500 text-sm">&copy; 2025 <span className='text-zinc-200'>Naextro</span></p>
     </div>
 </footer>  )
 }
