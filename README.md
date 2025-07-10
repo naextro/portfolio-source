@@ -28,7 +28,7 @@ A modern, responsive portfolio web application built with React, Vite, and Tailw
 
 ## Demo
 
-> [Live Demo Coming Soon]  
+> [Here: Naextro.vercel.app](https://naextro.vercel.app/)  
 > _Or deploy locally using the instructions below._
 
 ## Tech Stack
