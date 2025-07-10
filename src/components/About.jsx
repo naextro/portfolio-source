@@ -18,7 +18,7 @@ const About = () => {
     return (
         <section id='about' className='section'>
             <div className='container'>
-                <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12'>
+                <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up'>
                     <p className='text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]'>Hi, I’m Ibne Reham
 
                         I’m a full-stack developer and video editor. I build clean and responsive websites and web apps using tools like React, Tailwind, and Node.js. I also edit videos to tell clear and engaging stories through smooth cuts and visuals.
