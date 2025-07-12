@@ -7,7 +7,7 @@ const Hero = () => {
             <div>
                 <div className='flex items-center gap-3'>
                     <figure className='img-box w-9 h-9 rounded-lg'>
-                        <img src="images/avatar-1.jpg" alt="Ibne Arif Al Riham's portrait" width={40} height={40} className='img-cover' />
+                        <img src="images/hero.jpg" alt="Ibne Arif Al Riham's portrait" width={40} height={40} className='img-cover scale-[3] mt-4 ml-3' />
                     </figure>
                     <div className='flex items-center gap-1.5 tex-zinc-400 text-sm tracking-wide'>
                         <span className='relative w-2 h-2 rounded-full bg-emerald-400'>
@@ -26,7 +26,7 @@ const Hero = () => {
             </div>
             <div className=' hidden lg:block'>
                 <figure className='-z-10 w-full max-w-[480px] ml-auto bg-gradient-to-t from-white via-25% via-slate-500 to-65% rounded-[60px] overflow-hidden'>
-                    <img src="images/hero.jpg" alt="Ibne Arif Al Riham" height={800} width={656} className='w-full scale-[2]' />
+                    <img src="images/avatar-1.jpg" alt="Ibne Arif Al Riham" height={800} width={656} className='w-full ' />
                 </figure>
                 
             </div>
