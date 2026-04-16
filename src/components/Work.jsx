@@ -29,6 +29,30 @@ const works = [
     tags: ['Commerce', 'Development'],
     projectLink: 'https://cryptknex.vercel.app/'
   },
+  {
+    imgSrc: 'images/bloggy.png',
+    title: 'Personal-Blog landing page',
+    tags: ['Commerce', 'Development'],
+    projectLink: 'https://blooggy.vercel.app/'
+  },
+  {
+    imgSrc: 'images/cara.png',
+    title: 'Cara - E-Commerce Landing Page',
+    tags: ['Commerce', 'Development'],
+    projectLink: 'https://caarra.vercel.app/'
+  },
+  {
+    imgSrc: 'images/kick.png',
+    title: 'Kick - E-Commerce Landing Page',
+    tags: ['Commerce', 'Business'],
+    projectLink: 'https://caarra.vercel.app/'
+  },
+  {
+    imgSrc: 'images/CEEL.png',
+    title: 'CEEL Landing Page',
+    tags: ['Commerce', 'Construction'],
+    projectLink: 'https://ceel.vercel.app/'
+  },
 
 ];
 

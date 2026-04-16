@@ -42,9 +42,16 @@ const Review = () => {
     <section className="section overflow-hidden" id="reviews">
       <div className="container">
         <h2 className="headline-2 mb-8 reveal-up">What my clients say</h2>
-        <div className="overflow-x-auto scrub-slide flex gap-3 w-full flex-nowrap -mx-4 px-4 scrollbar-hide lg:overflow-x-visible lg:mx-0 lg:px-0">
+        <div className="ml-[40px] scrub-slide flex gap-6 items-stretch w-fit">
           {reviews.map(({ content, name, imgSrc, company }, key) => (
-            <ReviewCard key={key} name={name} imgSrc={imgSrc} company={company} content={content} />
+            <ReviewCard
+              key={key}
+              name={name}
+              imgSrc={imgSrc}
+              company={company}
+              content={content}
+              classes="min-w-[320px] md:min-w-[400px]" // Ensure cards have a set minimum width
+            />
           ))}
         </div>
       </div>
