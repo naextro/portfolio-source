@@ -50,7 +50,7 @@ const Review = () => {
               imgSrc={imgSrc}
               company={company}
               content={content}
-              classes="min-w-[320px] md:min-w-[400px]" // Ensure cards have a set minimum width
+                            classes="w-[320px] md:w-[400px] shrink-0" // Ensure cards have a set minimum width
             />
           ))}
         </div>
