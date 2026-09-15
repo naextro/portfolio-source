@@ -131,3 +131,46 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+/* =======================
+   CMS OVERLAY STYLES
+========================== */
+.cms-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.cms-sidebar {
+  width: 256px;
+  min-width: 256px;
+  height: 100vh;
+  background: #18181b;
+  border-right: 1px solid #27272a;
+  display: flex;
+  flex-direction: column;
+}
+
+.cms-editor-panel {
+  background: rgba(24, 24, 27, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(39, 39, 42, 0.5);
+}
+
+.cms-toggle-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 50;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.cms-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+}

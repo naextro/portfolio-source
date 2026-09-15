@@ -1,6 +1,9 @@
 import React from 'react'
 import { ButtonPrimary , ButtonOutline} from './Button'
+import { useCMS } from '../cms/CMSContext'
 const Hero = () => {
+  const { content } = useCMS();
+  const hero = content.hero;
   return (
     <section className='pt-28 lg:pt-36' id='home'>
         <div className='container grid lg:grid-cols-2 items-center lg:gap-10'>
@@ -13,15 +16,13 @@ const Hero = () => {
                         <span className='relative w-2 h-2 rounded-full bg-emerald-400'>
                             <span className='absolute inset-0 rounded-full bg-emerald-400 animate-ping '></span>
                         </span>
-                        Available for work
+                        {hero.subtitle}
                     </div>
                 </div>
-                <h2 className='headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-2-[15ch] mt-5 mb-8 lg:mb-10'>Bridging Code and Creativity for the Future
-
-                </h2>
+                <h2 className='headline-1 max-w-[15ch] sm:max-w-[20ch] lg:max-2-[15ch] mt-5 mb-8 lg:mb-10'>{hero.title}</h2>
                 <div className='flex items-center gap-3'>
-                    <ButtonPrimary href="#work" label="View My Work" icon="folder_open"/>
-                    <ButtonOutline href="#about" label="Scroll forward" icon='arrow_downward'  />
+                    <ButtonPrimary href="#work" label={hero.btnPrimary} icon="folder_open"/>
+                    <ButtonOutline href="#about" label={hero.btnSecondary} icon='arrow_downward'  />
                 </div>
             </div>
             <div className=' hidden lg:block'>
@@ -31,7 +32,6 @@ const Hero = () => {
                 
             </div>
         </div>
-
     </section>
   )
 }

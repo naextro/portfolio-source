@@ -1,86 +1,31 @@
 import PropTypes from "prop-types"
 import ProjectCard from "./ProjectCard";
-
-
+import { useCMS } from '../cms/CMSContext'
 
 const Work = () => {
-const works = [
-  {
-    imgSrc: 'images/anon.png',
-    title: 'E-Commerce Landing Page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://aanon.vercel.app/'
-  },
-  {
-    imgSrc: 'images/aureoles_0.jpg',
-    title: 'Aureoles Discord Bot',
-    tags: ['Development', 'API'],
-    projectLink: 'https://github.com/naextro/AureolesBot'
-  },
-  {
-    imgSrc: 'images/vlc.png',
-    title: 'VLC Discord Rich Presence',
-    tags: ['API', 'Development'],
-    projectLink: 'https://github.com/naextro/VLC_RPC'
-  },
-  {
-    imgSrc: 'images/cryptknex.png',
-    title: 'Crypto wallet landing page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://cryptknex.vercel.app/'
-  },
-  {
-    imgSrc: 'images/bloggy.png',
-    title: 'Personal-Blog landing page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://blooggy.vercel.app/'
-  },
-  {
-    imgSrc: 'images/cara.png',
-    title: 'Cara - E-Commerce Landing Page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://caarra.vercel.app/'
-  },
-  {
-    imgSrc: 'images/kick.png',
-    title: 'Kick - E-Commerce Landing Page',
-    tags: ['Commerce', 'Business'],
-    projectLink: 'https://caarra.vercel.app/'
-  },
-  {
-    imgSrc: 'images/CEEL.png',
-    title: 'CEEL Landing Page',
-    tags: ['Commerce', 'Construction'],
-    projectLink: 'https://ceel.vercel.app/'
-  },
+    const { content } = useCMS();
 
-];
-
-
-
-
-  return (
-    <section id="work" className="section">
-        <div className="container">
-            <h2 className="headline-2 mb-8 reveal-up">
-                My portfolio Highlights
-            </h2>
-            <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
-                {works.map(({imgSrc,title,tags,projectLink},key)=>(
-                    <ProjectCard 
-                    key={key}
-                    imgsrc={imgSrc}
-                    title={title}
-                    tags={tags}
-                    projectLink={projectLink}
-                    classes="reveal-up"
-                    
-                    />
-                ))}
+    return (
+        <section id="work" className="section">
+            <div className="container">
+                <h2 className="headline-2 mb-8 reveal-up">
+                    My portfolio Highlights
+                </h2>
+                <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
+                    {content.work.map(({imgSrc,title,tags,projectLink},key)=>(
+                        <ProjectCard 
+                        key={key}
+                        imgsrc={imgSrc}
+                        title={title}
+                        tags={tags}
+                        projectLink={projectLink}
+                        classes="reveal-up"
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default Work

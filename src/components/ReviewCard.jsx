@@ -15,10 +15,11 @@ const ReviewCard = ({
     content,
     imgSrc,
     name,
-    company
+    company,
+    classes
 }) => {
     return (
-        <div className="bg-zinc-800 p-5 rounded-xl min-w-[320px] flex flex-col lg:min-w-[420px]">
+        <div className={`bg-zinc-800 p-5 rounded-xl min-w-[320px] aspect-square flex flex-col ${classes}`}>
             <div className=" flex items-center gap-1 mb-3 ">
                 {ratings.map(({ icon, style }, key) => (
                     <span
@@ -35,8 +36,8 @@ const ReviewCard = ({
                 {content}
             </p>
 
-            <div className="flex items-center gap-2 mt-auto">
-                <figure className="w-44 h-44 rounded-lg overflow-hidden shrink-0">
+            <div className="flex gap-2 mt-auto">
+                <figure className="flex-1 aspect-square rounded-lg overflow-hidden shrink-0">
                     <img
                         src={imgSrc}
                         alt={name}
@@ -47,16 +48,11 @@ const ReviewCard = ({
                     />
                 </figure>
 
-                <div>
+                <div className="flex-1 flex flex-col justify-center">
                     <p>{name}</p>
 
                     <p className="text-xs text-zinc-400 tracking-wider">{company}</p>
                 </div>
-
-
-
-
-
             </div>
 
 
