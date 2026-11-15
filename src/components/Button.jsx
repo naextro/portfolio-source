@@ -17,4 +17,4 @@ function Base({ variant, href, label, icon, target, classes = '' }) {
 
 export const ButtonPrimary = (props) => <Base variant="btn-primary" {...props} />
 export const ButtonGhost = (props) => <Base variant="btn-ghost" {...props} />
-export const ButtonNeon = (props) => <Base variant="btn-neon" {...props} />
+export const ButtonPine = (props) => <Base variant="btn-pine" {...props} />

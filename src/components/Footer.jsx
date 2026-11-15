@@ -21,7 +21,7 @@ function Column({ title, items, external }) {
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
-              className="inline-block py-1 text-sm text-bone-300 transition-colors hover:text-neon"
+              className="inline-block py-1 text-sm text-bone-300 transition-colors hover:text-glacier"
             >
               {label}
             </a>
@@ -43,7 +43,7 @@ export default function Footer() {
               href="https://github.com/naextro/portfolio-source"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-bone-300 underline decoration-crimson-500 underline-offset-4 hover:text-neon"
+              className="text-bone-300 underline decoration-pine-500 underline-offset-4 hover:text-glacier"
             >
               Source on GitHub
             </a>

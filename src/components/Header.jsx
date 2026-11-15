@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import Icon from './Icon'
-import { ButtonNeon } from './Button'
+import { ButtonPine } from './Button'
 import { SPRING_MOMENTUM, SPRING_QUICK } from '../lib/motion'
 
 const NAV = [
@@ -69,7 +69,7 @@ export default function Header() {
           <a
             href="#home"
             aria-label="Naextro, back to top"
-            className="pointer-events-auto block h-8 w-8 bg-crimson-500 transition-colors duration-200 hover:bg-neon"
+            className="pointer-events-auto block h-8 w-8 bg-pine-500 transition-colors duration-200 hover:bg-glacier"
             style={{
               WebkitMaskImage: `url(${import.meta.env.BASE_URL}images/NAEXTRO.svg)`,
               maskImage: `url(${import.meta.env.BASE_URL}images/NAEXTRO.svg)`,
@@ -117,7 +117,7 @@ export default function Header() {
           </nav>
 
           <div className="pointer-events-auto hidden md:block">
-            <ButtonNeon href="#contact" label="Contact" icon="arrow-up-right" />
+            <ButtonPine href="#contact" label="Contact" icon="arrow-up-right" />
           </div>
 
           {/* Mobile menu */}
@@ -156,7 +156,7 @@ export default function Header() {
                           setOpen(false)
                         }}
                         className={`flex h-11 items-center justify-between rounded-xl px-4 text-[0.95rem] font-medium transition-colors active:bg-white/10 ${
-                          active === id ? 'text-neon' : 'text-bone-100'
+                          active === id ? 'text-pine-400' : 'text-bone-100'
                         }`}
                       >
                         {label}

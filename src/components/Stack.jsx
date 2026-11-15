@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 import { stack } from '../data/projects'
 import { asset } from '../lib/asset'
 
-const ACC = { crimson: 'var(--crimson-hi)', neon: 'var(--neon)', ember: 'var(--ember)' }
+const ACC = { pine: 'var(--pine-hi)', glacier: 'var(--glacier)', ice: 'var(--ice)' }
 
 export default function Stack() {
   return (

@@ -13,7 +13,7 @@ export const latest = [
     kind: 'Open source · Fork',
     date: 'Nov 2026',
     badge: 'Fork',
-    accent: 'crimson',
+    accent: 'pine',
     desc: 'Working in my fork of Liner, a desktop player for Windows and Linux that pulls your music and playlists from other platforms into one clean app. No ads, synced lyrics.',
     tags: ['Desktop', 'Windows', 'Linux'],
     href: 'https://github.com/naextro/desktop',
@@ -30,7 +30,7 @@ export const latest = [
     kind: 'Discord · AI agent',
     date: 'Oct 2026',
     badge: 'Python',
-    accent: 'neon',
+    accent: 'glacier',
     desc: 'An autonomous Discord server admin powered by Gemma 4 31B and discord.py. Admins talk to it in plain language and it picks the right tools: channels, roles, moderation, purges. Destructive actions need a confirmation click and everything is audit-logged.',
     tags: ['Python', 'discord.py', 'LLM tools'],
     href: 'https://github.com/naextro/AerisBot',
@@ -47,7 +47,7 @@ export const latest = [
     kind: 'Android · Root module',
     date: 'Oct 2026',
     badge: 'v2.0',
-    accent: 'ember',
+    accent: 'ice',
     desc: 'APatch / Magisk / KernelSU module that fixes Google sign-in loops and Play Services crashes on Android 13 to 16 ROMs, by granting GMS the role-holder permissions newer versions ask for.',
     tags: ['Android', 'APatch', 'Magisk', 'KernelSU'],
     href: 'https://github.com/naextro/gms-role-fix',
@@ -64,7 +64,7 @@ export const latest = [
     kind: 'Linux · Desktop rice',
     date: 'Jul 2026',
     badge: 'Fork',
-    accent: 'crimson',
+    accent: 'pine',
     desc: 'NieR:Automata-themed Hyprland + Quickshell + Waybar setup for Arch Linux, forked from samyns/unit-3. Radial control center, wallpaper picker, lockscreen, and an AI chat panel that talks to Ollama, Gemini, Groq or OpenRouter.',
     tags: ['Arch Linux', 'Hyprland', 'QML'],
     href: 'https://github.com/naextro/Unit-3',
@@ -133,7 +133,7 @@ export const builds = [
 export const stack = [
   {
     label: 'Languages',
-    accent: 'crimson',
+    accent: 'pine',
     items: [
       ['Python', 'images/py.svg'],
       ['JavaScript', 'images/javascript.svg'],
@@ -146,7 +146,7 @@ export const stack = [
   },
   {
     label: 'Frontend',
-    accent: 'neon',
+    accent: 'glacier',
     items: [
       ['React', 'images/react.svg'],
       ['Tailwind', 'images/tailwindcss.svg'],
@@ -156,7 +156,7 @@ export const stack = [
   },
   {
     label: 'Backend & data',
-    accent: 'ember',
+    accent: 'ice',
     items: [
       ['Node.js', 'images/nodejs.svg'],
       ['Express', 'images/expressjs.svg'],
@@ -169,7 +169,7 @@ export const stack = [
   },
   {
     label: 'Tools & systems',
-    accent: 'crimson',
+    accent: 'pine',
     items: [
       ['Git', 'images/git.svg'],
       ['GitHub', 'images/githubog.svg'],
@@ -180,7 +180,7 @@ export const stack = [
   },
   {
     label: 'Creative',
-    accent: 'neon',
+    accent: 'glacier',
     items: [
       ['After Effects', 'images/ae.svg'],
       ['Premiere Pro', 'images/pr.svg'],

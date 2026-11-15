@@ -19,7 +19,7 @@ export default function Contact() {
 
             <a
               href={`mailto:${EMAIL}`}
-              className="group acc-neon mt-8 inline-flex w-fit items-center gap-3 text-[clamp(1.25rem,3vw,1.75rem)] font-semibold tracking-tight transition-colors hover:text-neon"
+              className="group acc-glacier mt-8 inline-flex w-fit items-center gap-3 text-[clamp(1.25rem,3vw,1.75rem)] font-semibold tracking-tight transition-colors hover:text-glacier"
             >
               {EMAIL}
               <span className="arrow-chip">
@@ -35,7 +35,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-12 w-12 place-items-center rounded-xl border line-border text-bone-100 transition-colors duration-150 hover:border-neon hover:text-neon active:scale-95"
+                  className="grid h-12 w-12 place-items-center rounded-xl border line-border text-bone-100 transition-colors duration-150 hover:border-glacier hover:text-glacier active:scale-95"
                 >
                   <SocialIcon name={icon} />
                 </a>

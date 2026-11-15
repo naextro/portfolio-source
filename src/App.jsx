@@ -12,7 +12,7 @@ export default function App() {
     <>
       <a
         href="#work"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-neon focus:px-4 focus:py-2 focus:text-ink-950"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-glacier focus:px-4 focus:py-2 focus:text-ink-950"
       >
         Skip to work
       </a>

@@ -6,7 +6,7 @@ export default function WebCard({ item, delay = 0 }) {
   const { title, kind, image, href, tags } = item
   return (
     <Reveal delay={delay}>
-      <a href={href} target="_blank" rel="noopener noreferrer" className="group acc-neon block">
+      <a href={href} target="_blank" rel="noopener noreferrer" className="group acc-glacier block">
         <div
           className="aspect-[4/3] overflow-hidden rounded-xl border line-border bg-ink-800 transition-colors duration-200 group-hover:border-[color:var(--acc)]"
         >

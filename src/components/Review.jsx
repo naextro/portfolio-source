@@ -17,7 +17,7 @@ export default function Review() {
               delay={i * 0.07}
               className="flex min-h-[18rem] flex-col rounded-2xl border bg-ink-900 p-7 line-border md:p-9"
             >
-              <span aria-hidden="true" className="display text-6xl leading-none text-crimson-500">
+              <span aria-hidden="true" className="display text-6xl leading-none text-pine-500">
                 &ldquo;
               </span>
               <blockquote className="mt-2 text-xl font-medium leading-snug tracking-tight md:text-2xl">
