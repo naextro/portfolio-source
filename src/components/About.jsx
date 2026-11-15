@@ -1,61 +1,50 @@
-import React from 'react'
+import Reveal from './Reveal'
+import SectionHead from './SectionHead'
 
-const About = () => {
-    const aboutItems = [
-        {
-            label: 'Project done',
-            number: 8
-        },
-        {
-            label: 'Years of experience',
-            number: 3
-        }
-    ];
+const NOW = [
+  ['At', 'RS22 Studios'],
+  ['Learning', 'React, properly'],
+  ['Hacking on', 'Liner (fork), AerisBot'],
+  ['Daily driver', 'Arch + Hyprland'],
+]
 
+export default function About() {
+  return (
+    <section id="about" className="section">
+      <div className="container">
+        <SectionHead index="03" label="About" title="Clean code. Clean cuts." />
 
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-20">
+          <Reveal className="space-y-6 text-lg leading-relaxed text-bone-300 md:text-xl">
+            <p>
+              I&apos;m <span className="text-bone-50">Ibne Arif Al Riham</span>, Naextro online. I
+              build websites and web apps with React, Tailwind and Node, and I write the Python that
+              sits behind bots and automation.
+            </p>
+            <p>
+              I also edit video: tight cuts, clear stories. The thing I like most is the space
+              between disciplines, like a Discord bot that moderates a server, a module that fixes
+              an Android ROM, or a desktop that looks like a game.
+            </p>
+            <p>
+              Whether it&apos;s a product, a page or a timeline, I aim for simple, effective and
+              easy to use.
+            </p>
+          </Reveal>
 
-
-    return (
-        <section id='about' className='section'>
-            <div className='container'>
-                <div className='bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up'>
-                    <p className='text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]'>Hi, I’m Ibne Reham
-
-                        I’m a full-stack developer and video editor. I build clean and responsive websites and web apps using tools like React, Tailwind, and Node.js. I also edit videos to tell clear and engaging stories through smooth cuts and visuals.
-
-                        I enjoy solving problems with code and creating content that looks good and works well. Whether it's a product, a website, or a video, I focus on making it simple, effective, and user-friendly.
-
-                    </p>
-                    <div className='flex flex-wrap items-center gap-4 md:gap-7'>
-                        {
-                            aboutItems.map(({ label, number }, key) => (
-                                <div key={key}>
-                                    <div className='flex items-center md:mb-2'>
-                                        <span className='text-2xl font-bold md:text-4xl'>{number}</span>
-                                        <span className='text-sky-400 font-semibold md:text-3xl'>+</span>
-
-                                    </div>
-                                    <p className=' text-sm text-zinc-400'>{label} </p>
-                                </div>
-                            ))
-                        }
-                        <img
-                            src='images/NAEXTRO.svg'
-                            alt='logo'
-                            className='ml-auto md:w-[40px] md:h-[40px]'
-                            width={30}
-                            height={30}
-
-
-                        />
-
-
-                    </div>
-
+          <Reveal delay={0.08}>
+            <p className="label mb-4">Right now</p>
+            <dl className="border-t line-border">
+              {NOW.map(([k, v]) => (
+                <div key={k} className="flex items-baseline justify-between gap-6 border-b py-4 line-border">
+                  <dt className="label">{k}</dt>
+                  <dd className="text-right font-medium">{v}</dd>
                 </div>
-            </div>
-        </section>
-    )
+              ))}
+            </dl>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  )
 }
-
-export default About

@@ -1,63 +1,31 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skill from "./components/Skill";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Review from "./components/Review";
-import { ReactLenis } from "lenis/react";
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Work from './components/Work'
+import Stack from './components/Stack'
+import About from './components/About'
+import Review from './components/Review'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-
-
-
-
-gsap.registerPlugin(useGSAP,ScrollTrigger);
-
-
-
-const App = () => {
-
-useGSAP(()=>{
-  const elements = gsap.utils.toArray(".reveal-up")
-
-  elements.forEach((element)=>{
-    gsap.to(element,{
-      scrollTrigger:{
-        trigger: element,
-        scrub: true,
-        start: '-200 bottom',
-        end: 'bottom 80%',
-      },
-      y:0,
-      opacity:1,
-      duration:1,
-      ease: "power2.out"
-    })
-  })
-
-
-
-})
-
+export default function App() {
   return (
-    <ReactLenis root>
+    <>
+      <a
+        href="#work"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-neon focus:px-4 focus:py-2 focus:text-ink-950"
+      >
+        Skip to work
+      </a>
       <Header />
       <main>
         <Hero />
-        <About />
-        <Skill />
         <Work />
-        <Review/>
+        <Stack />
+        <About />
+        <Review />
         <Contact />
       </main>
       <Footer />
-    </ReactLenis>
+    </>
   )
 }
-
-export default App;

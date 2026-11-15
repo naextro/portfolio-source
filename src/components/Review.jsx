@@ -1,62 +1,46 @@
-import React from 'react'
-import ReviewCard from './ReviewCard'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
+import SectionHead from './SectionHead'
+import Reveal from './Reveal'
+import { reviews } from '../data/projects'
+import { asset } from '../lib/asset'
 
-gsap.registerPlugin(useGSAP, ScrollTrigger)
-
-const reviews = [
-  {
-    content:
-      'Impressive work! Fast loading times, intuitive design, and flawless backend integration. Won 3 prizes because of this.',
-    name: 'Bayzid Bokhary  (কিরান)',
-    imgSrc: 'images/bayzid.jpg',
-    company: 'Entrepreneur',
-  },
-  {
-    content: 'Your work is good and saved my time',
-    name: 'KM Rubaid Ferdous Swapnil',
-    imgSrc: 'images/SwapnilBro.jpg',
-    company: 'RS22 Studios',
-  },
-]
-
-const Review = () => {
-  useGSAP(() => {
-    const slide = document.querySelector('.scrub-slide')
-    const cards = slide.children.length
-    const scrollDistance = -cards * 50
-    gsap.to('.scrub-slide', {
-      scrollTrigger: {
-        trigger: '.scrub-slide',
-        start: '-200% 80%',
-        end: '400% 80%',
-        scrub: true,
-      },
-      x: scrollDistance,
-    })
-  })
-
+export default function Review() {
   return (
-    <section className="section overflow-hidden" id="reviews">
+    <section id="reviews" className="section">
       <div className="container">
-        <h2 className="headline-2 mb-8 reveal-up">What my clients say</h2>
-        <div className="ml-[40px] scrub-slide flex gap-6 items-stretch w-fit">
-          {reviews.map(({ content, name, imgSrc, company }, key) => (
-            <ReviewCard
-              key={key}
-              name={name}
-              imgSrc={imgSrc}
-              company={company}
-              content={content}
-                            classes="w-[320px] md:w-[400px] shrink-0" // Ensure cards have a set minimum width
-            />
+        <SectionHead index="04" label="Reviews" title="What clients say" />
+
+        <div className="grid gap-4 md:grid-cols-2">
+          {reviews.map(({ content, name, imgSrc, company }, i) => (
+            <Reveal
+              key={name}
+              as="figure"
+              delay={i * 0.07}
+              className="flex min-h-[18rem] flex-col rounded-2xl border bg-ink-900 p-7 line-border md:p-9"
+            >
+              <span aria-hidden="true" className="display text-6xl leading-none text-crimson-500">
+                &ldquo;
+              </span>
+              <blockquote className="mt-2 text-xl font-medium leading-snug tracking-tight md:text-2xl">
+                {content}
+              </blockquote>
+              <figcaption className="mt-auto flex items-center gap-3 pt-8">
+                <img
+                  src={asset(imgSrc)}
+                  alt=""
+                  width={44}
+                  height={44}
+                  loading="lazy"
+                  className="h-11 w-11 rounded-lg object-cover"
+                />
+                <div>
+                  <p className="font-medium">{name}</p>
+                  <p className="label mt-0.5">{company}</p>
+                </div>
+              </figcaption>
+            </Reveal>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-export default Review

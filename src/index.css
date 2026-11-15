@@ -2,132 +2,236 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  :root {
+    color-scheme: dark;
+    --bg: #0a0909;
+    --fg: #ece7df;
+    --muted: #8f887e;
+    --line: rgba(236, 231, 223, 0.12);
+    --crimson: #d1142f;
+    --crimson-hi: #f03a52;
+    --neon: #39ff14;
+    --ember: #ff7a1a;
+  }
+
+  html {
+    background: var(--bg);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: #3a3535 var(--bg);
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-bone-100 antialiased;
+    line-height: 1.55;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--crimson);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--neon);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
 }
 
-body {
-  @apply bg-zinc-900 text-zinc-50;
+@layer components {
+  .container {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+
+  .section {
+    @apply pt-24 md:pt-36;
+  }
+
+  /* ---- Type: tracking and leading change with size ---- */
+  .display {
+    font-stretch: 82%;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+
+  .h2 {
+    font-size: clamp(2.25rem, 5.2vw, 3.75rem);
+    font-stretch: 88%;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-wrap: balance;
+  }
+
+  .h3 {
+    font-stretch: 92%;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  /* small text gets positive tracking */
+  .label {
+    @apply font-mono text-[0.72rem] uppercase text-bone-500;
+    letter-spacing: 0.08em;
+  }
+
+  /* ---- Buttons: feedback lands on press, not release ---- */
+  .btn {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-xl px-6 text-[0.95rem] font-semibold;
+    transition-property: color, background-color, border-color, transform;
+    transition-duration: 160ms;
+    transition-timing-function: ease-out;
+  }
+  .btn:active {
+    transform: scale(0.97);
+    transition-duration: 90ms;
+  }
+  .btn-primary {
+    @apply bg-crimson-600 text-bone-50 hover:bg-crimson-500;
+  }
+  .btn-neon {
+    @apply h-10 bg-neon px-5 text-sm text-ink-950 hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply border text-bone-100;
+    border-color: var(--line);
+  }
+  .btn-ghost:hover {
+    border-color: var(--neon);
+    color: var(--neon);
+  }
+
+  /* ---- Materials: translucent layer, brighter top edge = light catching it ---- */
+  .glass {
+    background: rgba(16, 15, 15, 0.62);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--line);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 40px -18px rgba(0, 0, 0, 0.8);
+  }
+
+  /* fade where content meets floating chrome instead of a hard divider */
+  .edge-top {
+    background: linear-gradient(to bottom, rgba(10, 9, 9, 0.92), rgba(10, 9, 9, 0));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent);
+    mask-image: linear-gradient(to bottom, #000 35%, transparent);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 72px 72px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 15%, transparent 72%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 15%, transparent 72%);
+  }
+
+  /* ---- Accents: each card picks one, everything inside reads var(--acc) ---- */
+  .acc-crimson { --acc: var(--crimson-hi); }
+  .acc-neon { --acc: var(--neon); }
+  .acc-ember { --acc: var(--ember); }
+
+  .line-border { border-color: var(--line); }
+
+  .tone-muted { color: var(--muted); }
+  .tone-fg { color: var(--fg); }
+  .tone-acc { color: var(--acc); }
+
+  .arrow-chip {
+    @apply grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink-700 text-bone-100;
+    transition: background-color 160ms ease-out, color 160ms ease-out;
+  }
+  .group:hover .arrow-chip,
+  .group:focus-visible .arrow-chip {
+    background: var(--acc, var(--neon));
+    color: #0a0909;
+  }
+
+  .tag {
+    @apply rounded-md border px-2 py-1 font-mono text-[0.68rem] uppercase text-bone-300;
+    letter-spacing: 0.06em;
+    border-color: var(--line);
+  }
+
+  .chip {
+    @apply inline-flex h-10 items-center gap-2 rounded-lg border px-3.5 font-mono text-[0.8rem] text-bone-300;
+    border-color: var(--line);
+    transition: border-color 160ms ease-out, color 160ms ease-out;
+  }
+  .chip:hover {
+    border-color: var(--acc);
+    color: var(--acc);
+  }
+  .chip img {
+    filter: grayscale(1) brightness(1.4);
+    opacity: 0.85;
+    transition: filter 160ms ease-out, opacity 160ms ease-out;
+  }
+  .chip:hover img {
+    filter: none;
+    opacity: 1;
+  }
+
+  .field {
+    @apply w-full rounded-xl border bg-ink-900 px-4 py-3 text-[0.95rem] text-bone-100 outline-none placeholder:text-bone-500;
+    border-color: var(--line);
+    transition: border-color 160ms ease-out, box-shadow 160ms ease-out;
+  }
+  .field:focus {
+    border-color: var(--neon);
+    box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.14);
+  }
+
+  .rail-btn {
+    @apply grid h-10 w-10 place-items-center rounded-xl border text-bone-100;
+    border-color: var(--line);
+    transition: border-color 160ms ease-out, color 160ms ease-out, opacity 160ms ease-out, transform 90ms ease-out;
+  }
+  .rail-btn:hover:not(:disabled) {
+    border-color: var(--neon);
+    color: var(--neon);
+  }
+  .rail-btn:active:not(:disabled) {
+    transform: scale(0.94);
+  }
+  .rail-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .rail,
+  .rail * {
+    cursor: grab;
+  }
+  .rail:active,
+  .rail:active * {
+    cursor: grabbing;
+  }
 }
 
-/* =======================
-   CUSTOM CLASSES 1
-========================== */
-
-.headline-1 {
-  @apply max-w-max text-5xl leading-tight font-semibold lg:text-[55px] lg:leading-[1.15];
-  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* ---- Accessibility: reduced motion keeps feedback, drops the travel ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-ping { animation: none; }
+  .btn:active, .rail-btn:active:not(:disabled) { transform: none; }
 }
 
-.headline-2 {
-  @apply text-3xl lg:text-4xl lg:leading-tight font-semibold max-w-max;
-  background: -webkit-linear-gradient(0deg, #fafafa, #a1a1aa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* frostier / solid surfaces */
+@media (prefers-reduced-transparency: reduce) {
+  .glass { background: #100f0f; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .edge-top { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
-.title-1 {
-  @apply text-[22px] font-normal;
-}
-
-/* =======================
-   OTHER STUFF
-========================== */
-
-.material-symbols-rounded {
-  @apply w-[1em] h-[1em] overflow-hidden;
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-}
-
-.container {
-  @apply px-4 mx-auto lg:px-8 xl:max-w-6xl;
-}
-
-.img-box {
-  @apply bg-zinc-700 overflow-hidden;
-}
-
-.img-cover {
-  @apply w-full h-full object-cover;
-}
-
-.section {
-  @apply pt-20 lg:pt-32;
-}
-
-.reveal-up {
-  @apply translate-y-40 opacity-0;
-}
-
-/* =======================
-   CUSTOM CLASSES (UI)
-========================== */
-
-.menu-btn {
-  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop:blur-2xl hover:bg-zinc-50/15 transition-all active:scale-95;
-}
-
-.navbar {
-  @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-all md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur-2xl z-[1000] ;
-}
-
-.navbar.active {
-  @apply opacity-100 scale-100 blur-0 visible;
-}
-
-.nav-link {
-  @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50 transition-colors;
-}
-
-.nav-link.active {
-  @apply text-zinc-900 duration-500;
-}
-
-.navbar .active-box {
-  @apply absolute bg-zinc-50 rounded-lg -z-10 transition-all duration-500;
-}
-
-.btn {
-  @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-colors;
-}
-
-.btn-secondary {
-  @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80;
-}
-
-/* Replace this or handle via JSX conditionally */
-.btn-icon {
-  @apply pr-3;
-}
-
-.btn-primary {
-  @apply h-11 bg-sky-400 text-zinc-950 hover:bg-sky-300 active:bg-sky-400;
-}
-
-.btn-outline {
-  @apply h-11 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800;
-}
-
-
-/* TXT FIELD */
-
-.label{
-  @apply block text-zinc-200 text-sm font-normal mb-2
-}
-.text-field{
-  @apply block outline-none w-full px-3 py-3 text-sm bg-zinc-800 rounded-xl ring-1 ring-inset ring-transparent transition-shadow hover:ring-zinc-50/5 focus:ring-sky-400 focus:ring-2
-}
-.text-field::placeholder{
-  @apply text-zinc-400
-}
-
-/* Hide scrollbar utility */
-.scrollbar-hide {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+/* near-solid with a defined border */
+@media (prefers-contrast: more) {
+  :root { --line: rgba(255, 255, 255, 0.5); --muted: #c9c2b8; }
+  .glass { background: #000; border-color: #fff; }
 }

@@ -1,86 +1,50 @@
-import PropTypes from "prop-types"
-import ProjectCard from "./ProjectCard";
+import Rail from './Rail'
+import RepoCard from './RepoCard'
+import WebCard from './WebCard'
+import SectionHead from './SectionHead'
+import Reveal from './Reveal'
+import Icon from './Icon'
+import { builds, latest, GITHUB_URL, REPO_COUNT } from '../data/projects'
 
-
-
-const Work = () => {
-const works = [
-  {
-    imgSrc: 'images/anon.png',
-    title: 'E-Commerce Landing Page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://aanon.vercel.app/'
-  },
-  {
-    imgSrc: 'images/aureoles_0.jpg',
-    title: 'Aureoles Discord Bot',
-    tags: ['Development', 'API'],
-    projectLink: 'https://github.com/naextro/AureolesBot'
-  },
-  {
-    imgSrc: 'images/vlc.png',
-    title: 'VLC Discord Rich Presence',
-    tags: ['API', 'Development'],
-    projectLink: 'https://github.com/naextro/VLC_RPC'
-  },
-  {
-    imgSrc: 'images/cryptknex.png',
-    title: 'Crypto wallet landing page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://cryptknex.vercel.app/'
-  },
-  {
-    imgSrc: 'images/bloggy.png',
-    title: 'Personal-Blog landing page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://blooggy.vercel.app/'
-  },
-  {
-    imgSrc: 'images/cara.png',
-    title: 'Cara - E-Commerce Landing Page',
-    tags: ['Commerce', 'Development'],
-    projectLink: 'https://caarra.vercel.app/'
-  },
-  {
-    imgSrc: 'images/kick.png',
-    title: 'Kick - E-Commerce Landing Page',
-    tags: ['Commerce', 'Business'],
-    projectLink: 'https://caarra.vercel.app/'
-  },
-  {
-    imgSrc: 'images/CEEL.png',
-    title: 'CEEL Landing Page',
-    tags: ['Commerce', 'Construction'],
-    projectLink: 'https://ceel.vercel.app/'
-  },
-
-];
-
-
-
-
+export default function Work() {
   return (
     <section id="work" className="section">
-        <div className="container">
-            <h2 className="headline-2 mb-8 reveal-up">
-                My portfolio Highlights
-            </h2>
-            <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
-                {works.map(({imgSrc,title,tags,projectLink},key)=>(
-                    <ProjectCard 
-                    key={key}
-                    imgsrc={imgSrc}
-                    title={title}
-                    tags={tags}
-                    projectLink={projectLink}
-                    classes="reveal-up"
-                    
-                    />
-                ))}
-            </div>
+      <div className="container">
+        <SectionHead index="01" label="Work" title="Latest from GitHub">
+          Fresh commits, forks and releases, newest first. Bots, root modules, desktops and
+          whatever else I felt like building that week.
+        </SectionHead>
+
+        <Reveal>
+          <Rail label="Latest GitHub projects">
+            {latest.map((repo) => (
+              <RepoCard key={repo.id} repo={repo} />
+            ))}
+          </Rail>
+        </Reveal>
+
+        <Reveal className="mb-10 mt-24 flex flex-wrap items-end justify-between gap-4 md:mt-32">
+          <div>
+            <p className="label mb-3">Earlier work</p>
+            <h3 className="h2 !text-[clamp(1.75rem,3.6vw,2.5rem)]">Sites, bots and templates</h3>
+          </div>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost h-10 px-4 text-sm"
+          >
+            All {REPO_COUNT} repos
+            <Icon name="arrow-up-right" size={16} />
+          </a>
+        </Reveal>
+
+        <div className="grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {builds.map((item, i) => (
+            <WebCard key={item.title} item={item} delay={(i % 3) * 0.06} />
+          ))}
         </div>
+      </div>
     </section>
   )
 }
-
-export default Work

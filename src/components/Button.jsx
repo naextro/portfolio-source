@@ -1,88 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-const ButtonPrimary = ({
-    href,
-    target='',
-    label,
-    icon,
-    classes = ''
-}) => {
+import Icon from './Icon'
 
-
-    if(href){
-        return(
-            <a href={href} target={target} className={'btn btn-primary '+classes}>
-                {label}
-                {icon ?
-                <span className='material-symbols-rounded' aria-hidden='true'>{icon}</span>:undefined
-                }
-            </a>
-        )
-    }else{
-        return(
-            <button className={'btn btn-primary '+ classes}>
-                {label}
-                {icon ?
-                <span className='material-symbols-rounded' aria-hidden='true'>{icon}</span>:undefined
-                }
-            </button>
-        )
-    }
-  
+function Base({ variant, href, label, icon, target, classes = '' }) {
+  const external = target === '_blank'
+  return (
+    <a
+      href={href}
+      target={target}
+      rel={external ? 'noopener noreferrer' : undefined}
+      className={`btn ${variant} ${classes}`}
+    >
+      {label}
+      {icon && <Icon name={icon} />}
+    </a>
+  )
 }
 
-
-
-ButtonPrimary.propTypes= {
-    label:PropTypes.string.isRequired,
-    href:PropTypes.string,
-    target: PropTypes.string,
-    icon:PropTypes.string,
-    classes:PropTypes.string,
-
-}
-
-const ButtonOutline = ({
-    href,
-    target='',
-    label,
-    icon,
-    classes = ''
-}) => {
-
-
-    if(href){
-        return(
-            <a href={href} target={target} className={'btn btn-outline '+classes}>
-                {label}
-                {icon ?
-                <span className='material-symbols-rounded' aria-hidden='true'>{icon}</span>:undefined
-                }
-            </a>
-        )
-    }else{
-        return(
-            <button className={'btn btn-outline '+ classes}>
-                {label}
-                {icon ?
-                <span className='material-symbols-rounded' aria-hidden='true'>{icon}</span>:undefined
-                }
-            </button>
-        )
-    }
-  
-}
-
-
-
-ButtonOutline.PropTypes= {
-    label:PropTypes.string.isRequired,
-    href:PropTypes.string,
-    target: PropTypes.string,
-    icon:PropTypes.string,
-    classes:PropTypes.string,}
-
-export {
-    ButtonPrimary,
-    ButtonOutline,
-}
+export const ButtonPrimary = (props) => <Base variant="btn-primary" {...props} />
+export const ButtonGhost = (props) => <Base variant="btn-ghost" {...props} />
+export const ButtonNeon = (props) => <Base variant="btn-neon" {...props} />
