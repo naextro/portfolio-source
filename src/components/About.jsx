@@ -3,7 +3,7 @@ import SectionHead from './SectionHead'
 
 const NOW = [
   ['At', 'RS22 Studios'],
-  ['Learning', 'React, properly'],
+  ['Learning', 'NextJS SSR, Quickshell'],
   ['Hacking on', 'Liner (fork), AerisBot'],
   ['Daily driver', 'Arch + Hyprland'],
 ]

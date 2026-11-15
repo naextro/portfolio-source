@@ -80,6 +80,13 @@ export const latest = [
 // Earlier work: shipped sites and older repos, all with screenshots.
 export const builds = [
   {
+    title: 'Medimate.bd',
+    kind: 'HSC coaching website · Next.js',
+    image: 'images/medimate.png',
+    href: 'https://medimate.bd',
+    tags: ['Next.js', 'Coaching'],
+  },
+  {
     title: 'Anon',
     kind: 'E-commerce template',
     image: 'images/anon.png',
@@ -115,25 +122,11 @@ export const builds = [
     tags: ['E-commerce', 'Landing page'],
   },
   {
-    title: 'CEEL',
-    kind: 'Construction landing page',
-    image: 'images/CEEL.png',
-    href: 'https://ceel.vercel.app/',
-    tags: ['Construction', 'Landing page'],
-  },
-  {
     title: 'AureolesBot',
     kind: 'Discord bot · F1 notifier',
     image: 'images/aureoles_0.jpg',
     href: 'https://github.com/naextro/AureolesBot',
     tags: ['Python', 'Discord'],
-  },
-  {
-    title: 'VLC Rich Presence',
-    kind: 'Discord RPC for VLC',
-    image: 'images/vlc.png',
-    href: 'https://github.com/naextro/VLC_RPC',
-    tags: ['Python', 'Discord RPC'],
   },
 ]
 

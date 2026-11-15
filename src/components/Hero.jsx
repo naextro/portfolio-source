@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { ButtonPrimary, ButtonGhost } from './Button'
 import Reveal from './Reveal'
@@ -5,8 +6,8 @@ import { SPRING } from '../lib/motion'
 import { asset } from '../lib/asset'
 import { GITHUB_URL, REPO_COUNT } from '../data/projects'
 
-const WORDS = ['Web', 'apps,', 'bots,', 'and', 'the', 'odd', 'entire', 'desktop.']
-const ACCENT_FROM = 6 // "entire desktop." gets the crimson
+const WORDS = ['Web', 'apps,', 'bots,', 'and', 'Linux', 'desktops.']
+const ACCENT_FROM = 4 // "Linux desktops." gets the crimson
 
 const STATS = [
   { value: String(REPO_COUNT), label: 'Public repos' },
@@ -35,7 +36,8 @@ export default function Hero() {
 
           <h1 className="display text-[clamp(3rem,7.4vw,6.5rem)]">
             {WORDS.map((word, i) => (
-              <span key={i} className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em] align-bottom">
+              <Fragment key={i}>
+              <span className="inline-block overflow-hidden pb-[0.1em] -mb-[0.1em] align-bottom">
                 <motion.span
                   className={`inline-block ${i >= ACCENT_FROM ? 'text-crimson-400' : ''}`}
                   initial={reduce ? { opacity: 0 } : { y: '105%' }}
@@ -44,8 +46,9 @@ export default function Hero() {
                 >
                   {word}
                 </motion.span>
-                {i < WORDS.length - 1 && ' '}
               </span>
+              {i < WORDS.length - 1 && ' '}
+              </Fragment>
             ))}
           </h1>
 

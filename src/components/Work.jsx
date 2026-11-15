@@ -26,7 +26,7 @@ export default function Work() {
         <Reveal className="mb-10 mt-24 flex flex-wrap items-end justify-between gap-4 md:mt-32">
           <div>
             <p className="label mb-3">Earlier work</p>
-            <h3 className="h2 !text-[clamp(1.75rem,3.6vw,2.5rem)]">Sites, bots and templates</h3>
+            <h3 className="h2 !text-[clamp(1.75rem,3.6vw,2.5rem)]">Sites and bots</h3>
           </div>
           <a
             href={GITHUB_URL}
